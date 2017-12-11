@@ -2,11 +2,10 @@ window.onload = function() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("../service-worker.js")
       .then(function(registration) {
-        // Registration was successful
-        console.log("ServiceWorker registration successful with scope: ", registration.scope);
+        // Returns registration object
+        // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration
       }, function(err) {
-        // registration failed :(
-        console.log("ServiceWorker registration failed: ", err);
+        // registration failed
       });
   } else {
     // Service workers are not supported
